@@ -16,7 +16,7 @@ function dot(a: DataSet, b: DataSet): DataSet {
  * @param b List of numbers in second set
  * @returns The numerical coefficient in range -1.0 to 1.0
  */
-export const correlation = (a: DataSet, b: DataSet) => {
+export function correlation(a: DataSet, b: DataSet): number {
   // Confirm count if elements
   if (a.length < 2 || b.length < 2)
     throw new Error(`Datasets must have at least 1 element.`);
@@ -37,4 +37,4 @@ export const correlation = (a: DataSet, b: DataSet) => {
   const coefficient: number =
     (n * xy - x * y) / Math.sqrt((n * xx - x * x) * (n * yy - y * y));
   return coefficient;
-};
+}
